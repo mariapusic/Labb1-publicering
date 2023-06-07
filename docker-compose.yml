@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  labb1-publicering:
+    image: ${DOCKER_REGISTRY-}labb1publicering
+    build:
+      context: .
+      dockerfile: Labb1-publicering/Dockerfile
