@@ -7,10 +7,9 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["Labb1-publicering/Labb1-publicering.csproj", "Labb1-publicering/"]
+COPY ["Labb1-publicering.csproj", "."]
 RUN dotnet restore "Labb1-publicering/Labb1-publicering.csproj"
 COPY . .
-WORKDIR "/src/Labb1-publicering"
 RUN dotnet build "Labb1-publicering.csproj" -c Release -o /app/build
 
 FROM build AS publish
